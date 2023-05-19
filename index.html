@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JUST 쇼핑몰</title>
+    <link rel="stylesheet" href="./css/common.css">
+    <script src="./script/jquery-1.12.4.js"></script>
+</head>
+<body>
+    <div class="wrap">
+        <div class="header">
+            <div class="logo">
+                <img src="./images/logo.png" alt="상단로고">
+            </div>
+            <ul class="gnb">
+                <li>
+                    <a href="#">탑</a>
+                    <ul>
+                        <li><a href="#">블라우스</a></li>
+                        <li><a href="#">티</a></li>
+                        <li><a href="#">셔츠</a></li>
+                        <li><a href="#">니트</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">아우터</a>
+                    <ul>
+                        <li><a href="#">자켓</a></li>
+                        <li><a href="#">코트</a></li>
+                        <li><a href="#">가디건</a></li>
+                        <li><a href="#">머플러</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">팬츠</a>
+                    <ul>
+                        <li><a href="#">청바지</a></li>
+                        <li><a href="#">짧은바지</a></li>
+                        <li><a href="#">긴바지</a></li>
+                        <li><a href="#">레깅스</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">악세서리</a>
+                    <ul>
+                        <li><a href="#">귀고리</a></li>
+                        <li><a href="#">목걸이</a></li>
+                        <li><a href="#">반지</a></li>
+                        <li><a href="#">팔찌</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        <div class="slider">
+            <div class="slide">
+                <a href="#"><img src="./images/slide1.jpg" alt="슬라이드이미지1"></a>
+                <a href="#"><img src="./images/slide2.jpg" alt="슬라이드이미지2"></a>
+                <a href="#"><img src="./images/slide3.jpg" alt="슬라이드이미지3"></a>
+            </div>
+        </div>
+
+        <div class="contents">
+            <div class="tab">
+                <div class="tab_title">
+                    <h2 class="on">공지사항</h2>
+                    <h2>갤러리</h2>
+                </div>
+                <div class="tab_item">
+                    <ul class="notice">
+                        <li><a href="#"><b>></b> 2023년 할인 혜택 카드 목록을 확인 해 보세요. 2023년 할인 혜택 카드 목록을 확인 해 보세요.</a></li>
+                        <li><a href="#"><b>></b> 싸다구 정말 싸다구</a></li>
+                        <li><a href="#"><b>></b> 이래도 안살래? 정말 안살래? 진짜로 안살래?</a></li>
+                        <li><a href="#"><b>></b> 2023년 할인 혜택 카드 목록을 확인 해 보세요.2023년 할인 혜택 카드 목록을 확인 해 보세요.</a></li>
+                    </ul>
+                    <ul class="gallery">
+                        <li><a href="#"><img src="./images/gallery1.jpg" alt="갤러리이미지1"></a></li>
+                        <li><a href="#"><img src="./images/gallery2.jpg" alt="갤러리이미지2"></a></li>
+                        <li><a href="#"><img src="./images/gallery3.jpg" alt="갤러리이미지3"></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="banner">
+                <img src="./images/banner.jpg" alt="배너이미지">
+            </div>
+            <div class="link">
+                <ul>
+                    <li><a href="#">헤이 뮤직</a></li>
+                    <li><a href="#">나의 계정</a></li>
+                    <li><a href="#">계정 추가</a></li>
+                    <li><a href="#">클라우드</a></li>
+                </ul>
+            </div>
+            <div class="popup">
+                <h2></h2>
+                <p></p>
+                <a href="#">닫기</a>
+
+            </div>
+        </div>
+
+        <div class="footer">
+            <div class="f_logo">
+                <img src="./images/logo-footer.png" alt="">
+            </div>
+            <p>copy right</p>
+            <ul class="sns">
+                <li><a href="#">facebook</a></li>
+                <li><a href="#">instagram</a></li>
+                <li><a href="#">youtube</a></li>
+            </ul>
+        </div>
+    </div>
+    <script>
+        var index =0
+        $('.slide a').eq(index).show()
+
+        setInterval(function(){
+            nextIndex = (index+1) % 3
+            $('.slide a').eq(index).fadeOut()
+            $('.slide a').eq(nextIndex).fadeIn()
+            index = nextIndex
+        }, 3000)
+
+        $('.gnb').hover(
+            function(){
+            $('.gnb ul').stop().slideDown()
+            },
+            function(){
+            $('.gnb ul').stop().slideUp()
+            }
+        )
+
+        $('.tab_title h2').click(function(){
+            $('.tab_title h2').removeClass('on')
+            $(this).addClass('on')
+
+            
+        })
+    </script>
+    
+</body>
+</html>
